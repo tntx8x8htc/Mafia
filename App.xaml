@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MafiaManagerApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Bg">#F6F7FB</Color>
+            <Color x:Key="Card">#FFFFFF</Color>
+            <Color x:Key="Primary">#4F46E5</Color>
+            <Color x:Key="Dark">#111827</Color>
+            <Color x:Key="Muted">#6B7280</Color>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Padding" Value="16,12" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
