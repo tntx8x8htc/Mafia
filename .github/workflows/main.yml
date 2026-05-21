@@ -1,1 +1,33 @@
-.github/workflows/android-build.yml
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install MAUI
+        run: dotnet workload install maui-android
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build APK
+        run: dotnet publish -f net8.0-android -c Release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mafia-APK
+          path: "**/*.apk"
